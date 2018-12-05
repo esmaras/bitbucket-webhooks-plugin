@@ -1,8 +1,62 @@
-#
+#Bitbucket Webhooks Plugin API Documentation
+    
+    This readme will document the API and how to use it.
+----
+    Get existing webhooks for a specified project 
 
-This readme will document the API and how to use it. 
+* **URL**
 
-**Bitbucket Webhooks Plugin API documentation**
+  /rest/webhook/1.0/projects/$PROJECT/repos/$REPO/configurations
+
+* **Method:**
+  
+  `GET`
+
+* **Success Response:**
+  
+
+  * **Code:** 200 <br />
+    **Content:**
+    ```javascript
+    [
+        {
+            id: 21,
+            title: "Jenkins hook",
+            url: "http://local-jenkins.com/bitbucket-scmsource-hook/notify",
+            committersToIgnore: "jdoe",
+            enabled: true
+        },
+        {
+            id: 642,
+            title: "Other Site hook",
+            url: "http://local-site.com/path/to/hook",
+            enabled: true
+        }
+    ]
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+    **Content:**
+    ```javascript
+    {
+        errors: [
+            {
+                context: null,
+                message: "Repository iprepo/eric-test3 does not exist.",
+                exceptionName: "com.atlassian.bitbucket.repository.NoSuchRepositoryException"
+            }
+        ]
+    }
+    ```
+
+* **Sample Call:**
+
+    ```
+    curl -u '$USER:$PASSWORD' -H "Content-Type: application/json" -X GET $BITBUCKET_SERVER_URL/rest/webhook/1.0/projects/$PROJECT/repos/$REPO/configurations
+    ```
+
 ----
   <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
 
