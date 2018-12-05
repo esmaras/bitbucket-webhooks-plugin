@@ -43,14 +43,28 @@ public class WebhookResource {
                 .collect(Collectors.toList());
     }
 
-    @PUT
+    @POST
     public WebHookConfigurationModel createWebhook(@Context Repository repo, WebHookConfigurationModel newWebhook) {
         return createOrUpdateWebhook(repo, null, newWebhook);
     }
 
+    //PUT method for a create action is incorrect, but is kept for backwards compatibility
+    @PUT
+    public WebHookConfigurationModel createWebhookPUT(@Context Repository repo, WebHookConfigurationModel newWebhook) {
+        return createOrUpdateWebhook(repo, null, newWebhook);
+    }
+
+    @Path("/{configId}")
+    @PUT
+    public WebHookConfigurationModel updateWebhook(@Context Repository repo, @PathParam("configId") String configId,
+                                                   WebHookConfigurationModel updatedWebhook) {
+        return createOrUpdateWebhook(repo, configId, updatedWebhook);
+    }
+
+    //POST method for an update action is incorrect, but is kept for backwards compatibility
     @Path("/{configId}")
     @POST
-    public WebHookConfigurationModel updateWebhook(@Context Repository repo, @PathParam("configId") String configId,
+    public WebHookConfigurationModel updateWebhookPOST(@Context Repository repo, @PathParam("configId") String configId,
                                                    WebHookConfigurationModel updatedWebhook) {
         return createOrUpdateWebhook(repo, configId, updatedWebhook);
     }
