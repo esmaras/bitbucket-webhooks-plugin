@@ -1,3 +1,4 @@
+
 #Bitbucket Webhooks Plugin API Documentation
     
     This readme will document the API and how to use it.
@@ -54,7 +55,10 @@
     OR
 
   * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>`
+    **Content:** 
+    ```
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>
+    ```
 
 * **Sample Call:**
 
@@ -113,7 +117,10 @@
 * **Error Response:**
 
   * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>`
+    **Content:** 
+    ```
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>
+    ```
 
   OR
 
@@ -133,8 +140,10 @@
 
 * **Sample Call:**
 
-  curl -u user:password -H Content-Type: application/json -X POST -d {title: http://jenkins.example.com, url: http://jenkins.example.com/bitbucket-scmsource-hook/notify, enabled: true} 
+    ```
+    curl -u user:password -H Content-Type: application/json -X POST -d {title: http://jenkins.example.com, url: http://jenkins.example.com/bitbucket-scmsource-hook/notify, enabled: true} 
     https://my.bitbucket.server.com/rest/webhook/1.0/projects/MyProject/repos/MyRepo/configurations
+    ```
 
 * **Notes:**
 
@@ -196,7 +205,10 @@
 * **Error Response:**
 
   * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>`
+    **Content:** 
+    ```
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>
+    ```
 
   OR
 
@@ -216,8 +228,10 @@
 
 * **Sample Call:**
 
-  curl -u user:password -H Content-Type: application/json -X PUT -d {title: http://jenkins.example.com, url: http://jenkins.example.com/bitbucket-scmsource-hook/notify, enabled: true} 
+    ```
+    curl -u user:password -H Content-Type: application/json -X PUT -d {title: http://jenkins.example.com, url: http://jenkins.example.com/bitbucket-scmsource-hook/notify, enabled: true} 
     https://my.bitbucket.server.com/rest/webhook/1.0/projects/MyProject/repos/MyRepo/configurations
+    ```
 
 * **Notes:**
 
@@ -264,5 +278,7 @@
 
 * **Sample Call:**
 
-  curl -u $USER:$PASSWORD -H Content-Type: application/json -X DELETE $BITBUCKET_SERVER_URL/rest/webhook/1.0/projects/$PROJECT/repos/$REPO/configurations/$WEBHOOK_ID
+    ```
+    curl -u $USER:$PASSWORD -H Content-Type: application/json -X DELETE $BITBUCKET_SERVER_URL/rest/webhook/1.0/projects/$PROJECT/repos/$REPO/configurations/$WEBHOOK_ID
+    ```
 
