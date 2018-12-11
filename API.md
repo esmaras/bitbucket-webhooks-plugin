@@ -55,8 +55,16 @@
 
   * **Code:** 401 UNAUTHORIZED <br />
     **Content:** 
-    ```
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>
+    ```javascript
+    {
+        "errors": [
+            {
+                "context": null, 
+                "exceptionName": "com.atlassian.bitbucket.auth.IncorrectPasswordAuthenticationException", 
+                "message": "Authentication failed. Please check your credentials and try again."
+            }
+        ]
+    }
     ```
 
 * **Sample Call:**
@@ -117,8 +125,16 @@
 
   * **Code:** 401 UNAUTHORIZED <br />
     **Content:** 
-    ```
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>
+    ```javascript
+    {
+        "errors": [
+            {
+                "context": null, 
+                "exceptionName": "com.atlassian.bitbucket.auth.IncorrectPasswordAuthenticationException", 
+                "message": "Authentication failed. Please check your credentials and try again."
+            }
+        ]
+    }
     ```
 
   OR
@@ -205,8 +221,16 @@
 
   * **Code:** 401 UNAUTHORIZED <br />
     **Content:** 
-    ```
-    <?xml version="1.0" encoding="UTF-8" standalone="yes"?><status><status-code>401</status-code><message>Client must be authenticated to access this resource.</message></status>
+    ```javascript
+    {
+        "errors": [
+            {
+                "context": null, 
+                "exceptionName": "com.atlassian.bitbucket.auth.IncorrectPasswordAuthenticationException", 
+                "message": "Authentication failed. Please check your credentials and try again."
+            }
+        ]
+    }
     ```
 
   OR
